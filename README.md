@@ -1,4 +1,6 @@
 # EDGE-DETECTION
+## Name: MOHAMMAD SHAHIL
+## Reg : 212223240044
 ## Aim:
 To perform edge detection using Sobel, Laplacian, and Canny edge detectors.
 
@@ -22,69 +24,62 @@ Using Sobel operator from cv2,detect the edges of the image.
 
 Using Laplacian operator from cv2,detect the edges of the image and Using Canny operator from cv2,detect the edges of the image.
 
-## Code :
-
-## Original:
+## Program :
 ```
-# Name:MOHAMMAD SHAHIL
-# Reg_no:212223240044
+DEVELOPED BY : MOHAMMAD SHAHIL
+REG NO : 212223240044
+```
+
+```
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
-image = cv2.imread("C:/Users/admin/Downloads/Digital images/ex_6_image.jpg")
+# Load the image
+image = cv2.imread('lion.jpg')  # Replace with your image path
+
+# Convert to grayscale
 gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+
+# Original Image
 plt.imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
 plt.title('Original Image')
 plt.axis('off')
+```
+<img width="358" height="573" alt="image" src="https://github.com/user-attachments/assets/8d6c50fa-60b5-43d1-bbfe-de1b97dac143" />
+</br>
 
+### SOBEL EDGE DETECTOR
 ```
-## SOBEL EDGE DETECTOR
-```
-sobel_x = cv2.Sobel(gray_image, cv2.CV_64F, 1, 0, ksize=5) 
-sobel_y = cv2.Sobel(gray_image, cv2.CV_64F, 0, 1, ksize=5)  
-sobel_combined = cv2.magnitude(sobel_x, sobel_y)  
+sobel_x = cv2.Sobel(gray_image, cv2.CV_64F, 1, 0, ksize=5)  # Sobel in x direction
+sobel_y = cv2.Sobel(gray_image, cv2.CV_64F, 0, 1, ksize=5)  # Sobel in y direction
+sobel_combined = cv2.magnitude(sobel_x, sobel_y)  # Combine both directions
 plt.imshow(sobel_combined, cmap='gray')
 plt.title('Sobel Edge Detection')
 plt.axis('off')
 ```
-## LAPLACIAN EDGE DETECTOR
+<img width="406" height="569" alt="image" src="https://github.com/user-attachments/assets/abf3ee91-5778-4d8b-b169-d86b18f0ff4d" />
+</br>
+
+### LAPLACIAN EDGE DETECTOR
 ```
 laplacian = cv2.Laplacian(gray_image, cv2.CV_64F)
 plt.imshow(laplacian, cmap='gray')
 plt.title('Laplacian Edge Detection')
 plt.axis('off')
 ```
-## CANNY EDGE DETECTOR
+<img width="608" height="823" alt="image" src="https://github.com/user-attachments/assets/2374e918-2842-410e-9f98-c0af6313f97a" />
+</br>
+
+
+### CANNY EDGE DETECTOR
 ```
 canny_edges = cv2.Canny(gray_image, 50, 150)
 plt.imshow(canny_edges, cmap='gray')
 plt.title('Canny Edge Detection')
 plt.axis('off')  
 ```
-
-## Output:
-
-## Original:
-
-
-![image](https://github.com/user-attachments/assets/6f9f377b-0f7e-4753-be3f-d980e5190928)
-
-
-
-### SOBEL EDGE DETECTOR:
-
-![image](https://github.com/user-attachments/assets/93a5f06c-bf1c-481e-a12e-02d775fbfc05)
-
-
-### LAPLACIAN EDGE DETECTOR:
-
-![image](https://github.com/user-attachments/assets/8f7141b2-6a15-4b29-ada8-e732a11cf877)
-
-
-### CANNY EDGE DETECTOR
-![image](https://github.com/user-attachments/assets/8843ff6e-7010-4d03-bb49-38c31b24a6a1)
-
-
+<img width="615" height="838" alt="image" src="https://github.com/user-attachments/assets/aad58bdf-4ada-4072-a5f7-ba98eeda4862" /></br>
 ## Result:
 Thus the edges are detected using Sobel, Laplacian, and Canny edge detectors.
